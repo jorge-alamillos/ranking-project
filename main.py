@@ -22,15 +22,15 @@ def parse():
     parser.add_argument("-s", "--students",
                         dest='stdnts',
                         action= 'store_true',
-                        help="Imports all users from Json file")
+                        help="Imports all users from Json file into MongoDB")
     parser.add_argument("-l","--labs",
                         dest="lbs",
                         action= 'store_true',
-                        help="Imports all labs from Json file")
+                        help="Imports all labs from Json file into MongoDB")
     parser.add_argument("-p","--pulls",
                         dest="plls",
                         action= 'store_true',
-                        help="Imports all pulls from Json file")
+                        help="Imports all pulls from Json file into MongoDB")
     
     parser.add_argument("-hu","--hub",
                         dest='hb',

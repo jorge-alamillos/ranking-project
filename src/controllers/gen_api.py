@@ -11,11 +11,11 @@ o888o  o888o o88o     o8888o o8o        `8  o888o  o888o o888o o8o        `8   `
                                                                                                                                        `Y888P                                          
 """
 
-from src.app import app
+from src.server.app import app
 from flask import request, Response
 from src.helpers.json_response import asJsonResponse
 import re
-from src.database import db
+from src.server.database import db
 from bson.json_util import dumps
 
 
@@ -91,9 +91,9 @@ def get_lab(lab_id):
     perc_open = round((open_pulls/total_pulls)*100,2)
     
 
-    foundStudent = list(db.students.find({{"user_login":{"$exists":True}}}))
+    #foundStudent = db.students.find({{"user_login":{"$exists":True}},{"user_login":1}})
 
-    pullStudent = db.pulls.find({"pull_title":lab_id},{"pull_title":1})
+    #pullStudent = db.pulls.find({"pull_title":lab_id},{"pull_title":1})
     
 
     result={'-El numero de PR es': total_pulls,'-El numero de PR abiertas es': open_pulls,

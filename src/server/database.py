@@ -1,4 +1,4 @@
-from config import DBURL
+from src.server.config import DBURL
 from pymongo import MongoClient
 
 client = MongoClient(DBURL)

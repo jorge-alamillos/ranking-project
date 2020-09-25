@@ -1,4 +1,4 @@
-from src.database import db
+from src.server.database import db
 import pandas as pd
 
 def import_json(json):
