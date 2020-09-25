@@ -17,7 +17,7 @@ import pandas as pd
 import json
 
 def parse():
-    parser = argparse.ArgumentParser(description="Indicate what you want to import users, labs or pulls")
+    parser = argparse.ArgumentParser(description="Indicate what you want to import into MongoDB database: users, labs or pulls")
     
     parser.add_argument("-s", "--students",
                         dest='stdnts',

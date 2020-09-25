@@ -1,8 +1,8 @@
 ![ranking](src/images/ranking.png)
 
-#### Project made in Ironhack 08.20 bootcamp
+##### Project made in Ironhack 08.20 bootcamp
 ## Objective
-There are two main goals for this project. The main objective of this project is the practice in the development of web APIs with ```Flask``` library for Python. The second objective consists of integrating the required data in ```MongoDB``` database.
+There are two main goals for this project. The main objective  is the practice in the development of web APIs with ```Flask``` library for Python. The second objective consists of integrating the required data in ```MongoDB``` database.
 
 ## Using the program and available commands
 
@@ -37,9 +37,47 @@ Run some of these commands in Terminal as follows. Two types of report are avail
 		- `gen_api.py`: Script that executes the endpoints in the API
 	 
 
-## API and main.py Use
+## Using the program
 
-#### main.py
+#### Starting the Flask server for the API
+ Execute `python3 server.py` from the terminal. You show obtain a message like this:
+```bash
+ * Serving Flask app "ranking" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:3000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 291-879-593
+```
+#### Downloading data from GitHub and importing it into MongoDB
+ Execute `python3 main.py <-OPTION>` from the terminal including one of the options below:
+
+```bash
+main.py -h
+usage: main.py [-h] [-s] [-l] [-p] [-hu]
+
+Indicate what you want to import into MongoDB database: users, labs or pulls
+
+optional arguments:
+  -h, --help      show this help message and exit
+  -s, --students  Imports all users from Json file into MongoDB
+  -l, --labs      Imports all labs from Json file into MongoDB
+  -p, --pulls     Imports all pulls from Json file into MongoDB
+  -hu, --hub      Imports info from github to Json file
+```
+#### Using the API endpoints
+
+Introduce the url in your internet navigator:[local](http://localhost:3000/)
+
+"A.--> /student/create/<studentname>.": "Creates a student and save into DB",
+        "B.--> /student/all": "Lists all students in database",
+        "C.--> /lab/create/<labname>": "Creates a lab to be analyzed",
+        "D.--> /lab/<lab_id>/search": "Search student submissions on specific lab",
+        "E.--> /lab/<lab_id>/meme": "Get a random meme (extracted from the ones used for each student pull request for that lab"
+
 
 
 
