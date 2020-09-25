@@ -2,9 +2,9 @@
 ![ranking](src/images/ranking.png)
 
 ### Project made in Ironhack 08.20 bootcamp
-##Objective
+## Objective
 There are two main goals for this project. The main objective of this project is the practice in the development of web APIs with ```Flask``` library for Python. The second objective consists of integrating the required data in ```MongoDB``` database.
-### 
+
 ## Using the program and available commands
 
 Run some of these commands in Terminal as follows. Two types of report are available:
