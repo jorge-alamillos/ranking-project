@@ -13,7 +13,7 @@ o888o  o888o o88o     o8888o o8o        `8  o888o  o888o o888o o8o        `8   `
 
 from src.server.app import app
 from flask import request, Response
-from src.helpers.json_response import asJsonResponse
+from src.server.json_response import asJsonResponse
 import re
 from src.server.database import db
 from bson.json_util import dumps

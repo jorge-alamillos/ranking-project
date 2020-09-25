@@ -1,7 +1,6 @@
-# THE RANKING PROJECT - development of APIS and integration in MongoDB
 ![ranking](src/images/ranking.png)
 
-### Project made in Ironhack 08.20 bootcamp
+#### Project made in Ironhack 08.20 bootcamp
 ## Objective
 There are two main goals for this project. The main objective of this project is the practice in the development of web APIs with ```Flask``` library for Python. The second objective consists of integrating the required data in ```MongoDB``` database.
 
@@ -24,35 +23,32 @@ Run some of these commands in Terminal as follows. Two types of report are avail
 - `python3 main.py  -l MODEL`, ``--model MODEL`` => Introduce Iphone model. Available from iPhone 4 (2010) to iPhone SE (2020). Input must be equal to: iphone 4 iPhone 4s iPhone 5 iPhone 5s iPhone 5c iPhone 6 iPhone 6 Plus iPhone 6s iPhone 6s Plus iPhone SE (1ª generación) iPhone 7 iPhone 7 Plus iPhone 8 iPhone 8 Plus iPhone X iPhone XS iPhone XS Max iPhone XR iPhone11 iPhone 11 Pro iPhone 11 Pro Max iPhone SE (2ª generación)
 
 
-## Path
+## Project Structure
 
-	- Main.py: 
-	- 
-	- 
-	- __Trash folder:
-	- inputs folder:
-		 + 
-		 + 
-	- output folder: contains the resulting PDF and the plots images
-		 +
-		 + 
-	- src folder: internal code to generate de dataframes and 
-		 +
+- `main.py`: Executable script to download data from GitHub and import into MongoDB. See more info in Program Use.
+- `server.py`: Executable script to start Flask server.
+-  `__Trash__/`: Jupyter file used for developement testing 
+- `src/`:
+	1. `get_github.py`: Script used in `main.py` to download data from GitHub
+	2. `get_mongo`: Script used in `main.py` to import data into MongoDB
+	3. `students.json`: Json file with the data downloaded from GitHub
+	4. `server/`: folder containing configuration files for the server and MongoDB
+	5. `controllers/`: 
+		- `gen_api.py`: Script that executes the endpoints in the API
 	 
 
-## Source and libraries used
-#### EN CONSTRUCCIÓN
-- Dataset extracted from Kaggle: [Kaggle link to repo](https://www.google.com)https://www.kaggle.com/tarunpaparaju/apple-aapl-historical-stock-data/notebooks
-- IEX API: [](https://iexcloud.io/)
-- ArgsParse library
-- Yfinance library [](https://pypi.org/project/yfinance/)
-- Plotly library []https://plotly.com/graphing-libraries/
-- Datetime library
-- Beautiful Soup library
-- Dotenv library
-- Json library
+## API and main.py Use
 
-## Example result
-![example](src/images/example.png)
+#### main.py
 
 
+
+## Main sources and references
+
+###### Data source
+ - Student names, labs and pull requests in ironhack/datamad0820 repo in GitHub: [link to repo](https://github.com/ironhack-datalabs/datamad0820)
+###### Python libraries and programs
+- `flask`
+- `pymongo`
+- `argsparse`
+- `MongoDB`
