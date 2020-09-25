@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 .env
+.pyc
+.__pycache__/
