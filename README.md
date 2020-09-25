@@ -1,8 +1,13 @@
 ![ranking](src/images/ranking.png)
 
-##### Project developed in Ironhack 08.20 Data Analitics bootcamp
+##### Project developed in Ironhack 08.20 Data Analytics bootcamp
 ## Objective
 There are two main goals for this project. The main objective is the practice in the development of web APIs with ```Flask``` library for Python. The second aim consists of integrating the required data in ```MongoDB``` database. 
+
+## Steps in the project
+1. Download all pull requests from a Github repository.
+2. Analyze those pull requests to obtain information. The data is stored in a mongodb database.
+3. Publish an API that answers queries about the saved information.
 
 ## Project Structure
 
@@ -18,11 +23,8 @@ There are two main goals for this project. The main objective is the practice in
 		- `gen_api.py`: Script that executes the endpoints in the API
 	 
 ## Using the program
-T
 
-
-
-#### Downloading data from GitHub and importing it into MongoDB
+#### 1. Downloading data from GitHub and importing it into MongoDB
  Execute `python3 main.py <-OPTION>` from the terminal including one of the options below:
 
 ```bash
@@ -38,7 +40,7 @@ optional arguments:
   -l, --labs      Imports all labs from Json file into MongoDB
   -p, --pulls     Imports all pulls from Json file into MongoDB
 ```
-#### Starting Flask server to run the API
+#### 2. Starting Flask server to run the API
  Execute `python3 server.py` from the terminal. You show obtain a message like this:
 ```bash
  * Serving Flask app "ranking" (lazy loading)
@@ -51,11 +53,10 @@ optional arguments:
  * Debugger is active!
  * Debugger PIN: 291-879-593
 ```
-#### Using the API endpoints
-
-Introduce the url in your internet navigator: ´http://localhost:3000/` followed by one of these endpoints:
-
+#### 3. Using the API endpoints
+Introduce the url in your internet navigator: http://localhost:3000/ followed by one of these endpoints:
 ##### `/student/create/<studentname>` --> Creates an student and saves it into MongoDB
+
 ##### `/student/all` --> Lists all students in MongoDB. See example:
 ```json
 {
@@ -79,6 +80,7 @@ user_login: "Daniel-GarciaGarcia"
 ```
 
 ##### `/lab/create/<labname>` --> Creates a lab to be analyzed
+
 ##### `/lab/<lab_id>/search` --> Searches statistics on specific lab. See example.
 ```json
 {
@@ -88,8 +90,6 @@ user_login: "Daniel-GarciaGarcia"
 -Percentage of open Pull Requests over the total: 26.32
 }
 ```
-
-
 ##### `/lab/<lab_id>/meme"` --> Gets a random meme joke (extracted from the ones used for each student pull request for that lab. See example.
 ```json
 {
@@ -97,15 +97,12 @@ _id: {
 $oid: "5f6cefb9cec9d01d6f316119"
 },
 meme: [
-"https://user-images.githubusercontent.com/52798316/93356303-4e639a80-f83f-11ea-8d61-65fe94209815.png"
-]
-}
-]
+"https://user-images.githubusercontent.com/52798316/93356303-4e639a80-f83f-11ea-8d61-65fe94209815.png"]}]
 ```
 
 ## Main sources and references
 ###### Data source
- - Student names, labs and pull requests in ironhack/datamad0820 repo in GitHub: [link to repo](https://github.com/ironhack-datalabs/datamad0820)
+ - Student names, labs and pull requests in ironhack/datamad0820 repo in GitHub: [link to the repo](https://github.com/ironhack-datalabs/datamad0820)
 ###### Python libraries and programs
 - `flask`
 - `pymongo`
