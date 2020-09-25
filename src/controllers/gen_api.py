@@ -17,6 +17,7 @@ from src.server.json_response import asJsonResponse
 import re
 from src.server.database import db
 from bson.json_util import dumps
+import re
 
 
 @app.route('/') 
@@ -96,9 +97,9 @@ def get_lab(lab_id):
     #pullStudent = db.pulls.find({"pull_title":lab_id},{"pull_title":1})
     
 
-    result={'-El numero de PR es': total_pulls,'-El numero de PR abiertas es': open_pulls,
-     '-El numero de PR cerradas es': closed_pulls, '-El porcentaje de PR abiertas sobre el total es': perc_open,'prueba':foundStudent
-    }
+    result={'-Number of total Pull Requests': total_pulls,'-Number of open Pull Requests': open_pulls,
+     '-Number of closed Pull Requests': closed_pulls, '-Percentage of open Pull Requests over the total': perc_open
+     }
   
     return dumps(result)
 
@@ -118,6 +119,7 @@ def random_meme(lab_id):
     Purpose: Get a random meme (extracted from the ones used for each student pull request for that lab
     '''
     meme_projections = {"meme":1}
-    random_meme = db.pulls.aggregate([{"$match": {"$and": [{"pull_title": lab_id}, 
-    {"pull_state":"closed"}]}}, {"$sample": {"size": 1}}, {"$project": meme_projections}])
-    return dumps(random_meme)   
+    random_meme = list(db.pulls.aggregate([{"$match": {"$and": [{"pull_title": lab_id}, 
+    {"pull_state":"closed"}]}}, {"$sample": {"size": 1}}, {"$project": meme_projections}]))
+
+    return dumps(f"Chosen meme from {lab_id} is {random_meme}")   

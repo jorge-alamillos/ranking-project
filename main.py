@@ -19,6 +19,10 @@ import json
 def parse():
     parser = argparse.ArgumentParser(description="Indicate what you want to import into MongoDB database: users, labs or pulls")
     
+    parser.add_argument("-hu","--hub",
+                        dest='hb',
+                        action= 'store_true',
+                        help="Imports info from github to Json file")
     parser.add_argument("-s", "--students",
                         dest='stdnts',
                         action= 'store_true',
@@ -32,11 +36,7 @@ def parse():
                         action= 'store_true',
                         help="Imports all pulls from Json file into MongoDB")
     
-    parser.add_argument("-hu","--hub",
-                        dest='hb',
-                        action= 'store_true',
-                        help="Imports info from github to Json file")
-        
+          
     args = parser.parse_args()                                                              
     return args
 
